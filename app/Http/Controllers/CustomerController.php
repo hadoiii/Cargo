@@ -19,6 +19,12 @@ class CustomerController extends Controller
     }
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required|email',
+            'address' => 'required',
+            'phone' => 'required',
+        ]);
         Customer::create([
             'name'=> $request->name,
             'email'=> $request->email,
@@ -26,6 +32,6 @@ class CustomerController extends Controller
             'phone'=> $request->phone,
         ]);
 
-        return redirect('/customers');
+        return redirect('/customers')->with('success', 'Data Customer berhasil ditambahkan');
     }
 }
