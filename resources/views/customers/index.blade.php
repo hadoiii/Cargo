@@ -28,7 +28,7 @@
                       <td>{{$customer->address}}</td>
                       <td>{{$customer->phone}}</td>
                       <td>
-                        <a href="#" class="btn btn-warning">Edit</a>
+                        <a href="/customers/{{ $customer->id }}/edit" class="btn btn-warning">Edit</a>
                         <a href="#" class="btn btn-danger">Delete</a>
                       </td>
                     </tr>
